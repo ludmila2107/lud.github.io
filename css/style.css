@@ -11,7 +11,16 @@
     cursor: pointer;
     background-color: rgb(27, 5, 107);
 }
+.number-elements{
+
+    
+}
 .new-elements{
     margin-top: 25vh;
     min-height: 25px;
+}
+.elem{
+    padding: 10px;
+    font-size: 20px;
+    border: 1px dashed gold;
 }
