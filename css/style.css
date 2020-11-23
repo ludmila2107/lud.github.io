@@ -1,3 +1,17 @@
-body{
-    background-color: gray;
+
+.btn-create{
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 3px gold;  
+  background-color: rgb(86, 16, 218);
+  text-transform: uppercase;
+}
+.btn-create:hover{
+    cursor: pointer;
+    background-color: rgb(27, 5, 107);
+}
+.new-elements{
+    margin-top: 25vh;
+    min-height: 25px;
 }
