@@ -1,26 +1,25 @@
+.btn-create {
+    padding: 10px 15px;
 
-.btn-create{
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 1px 1px 3px gold;  
-  background-color: rgb(86, 16, 218);
-  text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 3px rgb(3, 94, 136);
+
+    color: #fff;
+    text-transform: uppercase;
+    background-color: rgb(60, 165, 214);
+
+    transition: all 0.25s;
 }
-.btn-create:hover{
+
+.btn-create:hover {
     cursor: pointer;
-    background-color: rgb(27, 5, 107);
+    background-color: rgb(14, 95, 133);
 }
-.number-elements{
 
+.new-elements {
+    min-height: 25vh;
+    margin-top: 25px;
     
-}
-.new-elements{
-    margin-top: 25vh;
-    min-height: 25px;
-}
-.elem{
-    padding: 10px;
-    font-size: 20px;
-    border: 1px dashed gold;
+    background-color: lightgreen;
 }
