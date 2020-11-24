@@ -38,6 +38,7 @@ btnCreate.onclick = function() {
         elem.style.fontSize = sizeText.textContent + 'px';
 
         newElements.appendChild(elem);
+        imgClass = getImgType(imgTypes);
 
         if(chkImage.checked) {
             let image = document.createElement('img');
@@ -45,8 +46,6 @@ btnCreate.onclick = function() {
             image.alt = 'Изображение в абзаце';
             image.title = 'Это картинка';
             image.classList.add('photo');
-
-            imgClass = getImgType(imgTypes);
             image.classList.add(imgClass);
 
             elem.appendChild(image);
@@ -63,8 +62,6 @@ btnRemove.onclick = function() {
 }
 
 function getImgType(imgTypes) {
-    imgClass = "";
-    
     if(imgTypes[0].checked) {
         return imgClass = "photo-circle";
     }
@@ -73,8 +70,5 @@ function getImgType(imgTypes) {
     }
     else if(imgTypes[2].checked) {
         return imgClass = "photo-angle";
-    }
-    else {
-        return imgClass;
     }
 }
