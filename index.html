@@ -30,10 +30,21 @@
                 <input class="chk-image" id="chk-image" type="checkbox">
             </div>
 
+            <div class="row-form img-settings img-settings__hidden">
+                <input class="img-type" name="img-type" id="img-type-circle" type="radio">
+                <label class="label-img" for="img-type-circle">Круглая с тенью</label>
+
+                <input class="img-type" name="img-type" id="img-type-border" type="radio">
+                <label class="label-img" for="img-type-border">В рамке</label>
+
+                <input class="img-type" name="img-type" id="img-type-angle" type="radio">
+                <label class="label-img" for="img-type-angle">Под углом</label>
+            </div>
+
             <button class="btn btn-create">Создать элементы</button>
 
             <div class="row-form">
-                <label class="label-size" for="size-text">Размер текста:</label>
+                <label class="label-size" for="size-text">Изменить размер текста:</label>
                 <span class="size-change">8px</span>
                 <input class="size-text" id="size-text" type="range" min="8" max="30" value="14">
                 <span class="size-change">30px</span>

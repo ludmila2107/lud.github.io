@@ -1,17 +1,33 @@
-let btnCreate = document.querySelector('.btn-create');
-let btnRemove = document.querySelector('.btn-remove');
-let newElements = document.querySelector('.new-elements');
 let numberElements = document.querySelector('.number-elements');
 let textContainer = document.querySelector('.text-container');
 let chkImage = document.querySelector('.chk-image');
+let rangeText = document.querySelector('.size-text');
+let sizeText = document.querySelector('.size');
+
+let newElements = document.querySelector('.new-elements');
+
+let btnCreate = document.querySelector('.btn-create');
+let btnRemove = document.querySelector('.btn-remove');
+
 let elem;
 
-btnCreate.onclick = function () {
-    for(let i = 0; i < +numberElements.value; i++) {
+rangeText.oninput = function() {
+    let fontSize = rangeText.value;
+    let children = newElements.childNodes;
 
+    sizeText.textContent = fontSize;
+
+    for (let i = 0; i < children.length; i++) {
+        children[i].style.fontSize = fontSize + 'px';
+    }
+}
+
+btnCreate.onclick = function() {
+    for(let i = 0; i < +numberElements.value; i++) {
         elem = document.createElement('p');
         elem.textContent = textContainer.value;
         elem.classList.add('elem');
+        elem.style.fontSize = sizeText.textContent + 'px';
 
         newElements.appendChild(elem);
 
@@ -27,9 +43,9 @@ btnCreate.onclick = function () {
     }
 }
 
-let children = newElements.childNodes;
-
 btnRemove.onclick = function() {
+    let children = newElements.childNodes;
+    
     for(let i = children.length - 1; i > -1; i--) {
         newElements.removeChild(children[i]);
     }
