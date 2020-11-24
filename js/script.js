@@ -1,44 +1,29 @@
-//let btnCreate = document.querySelector('.btn-create');
-//let newElements = document.querySelector('.new-elements');
-//let elem;
-//let numberElements = document.querySelector('.number-elements');
-
-
-//btnCreate.onclick = function() {
-  //  for(let i = 0; i < +numberElements.value; i++) {
-
-
-
-    //    elem = document.createElement('p');
-      //  elem.textContent = "Новый абзац...";
-    //    elem.classList.add('elem');
-
-     //   newElements.append(elem);
- //   }
-//}
-
-
-
 let btnCreate = document.querySelector('.btn-create');
 let btnRemove = document.querySelector('.btn-remove');
 let newElements = document.querySelector('.new-elements');
-let elem;
 let numberElements = document.querySelector('.number-elements');
+let textContainer = document.querySelector('.text-container');
+let chkImage = document.querySelector('.chk-image');
+let elem;
 
-
-btnCreate.onclick = function() {
+btnCreate.onclick = function () {
     for(let i = 0; i < +numberElements.value; i++) {
 
         elem = document.createElement('p');
-        elem.textContent = "Новый абзац...";
+        elem.textContent = textContainer.value;
         elem.classList.add('elem');
 
-        if(i == 0) {
-            elem.style.backgroundColor = "darkred";
-            elem.style.color = "white";
-        }
+        newElements.appendChild(elem);
 
-        newElements.append(elem);
+        if(chkImage.checked) {
+            let image = document.createElement('img');
+            image.src = 'img/photo.jpg';
+            image.alt = 'Изображение в абзаце';
+            image.title = 'Это картинка';
+            image.classList.add('photo');
+
+            elem.appendChild(image);
+        }
     }
 }
 
