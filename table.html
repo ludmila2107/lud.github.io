@@ -6,8 +6,40 @@
     <title>Создание таблиц</title>
 
 <style>
+.table {
+            border: 5px solid blue;
+            border-collapse: collapse;
+        }
 
+        .table-name {
+            margin-bottom: 10px;
+            font-family: "Verdana", sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: darkgreen;
+        }
 
+        .table-header {
+            background-color: rgb(141, 190, 245);
+        }
+
+        .table-body {
+            background-color: rgb(231, 250, 186);
+        }
+
+        .table-footer {
+            background-color: rgb(253, 203, 203);
+        }
+
+        .table-row,
+        .table-data {
+            border: 2px solid lightgreen;
+        }
+
+        .table-data {
+            padding: 10px;
+        }
 
 </style>
 
@@ -16,9 +48,101 @@
 
 </head>
 <body>
+<form class="table-settings" method="get" action="#">
+    <fieldset>
+        <legend>Основные настройки</legend>
+        <div class="form-group">
+            <label for="numberRows">Кол-во строк: </label>
+            <input id="numberRows" type="number" min="1" max="20" value="5">
+        </div>
+        <div class="form-group">
+            <label for="numberColumns">Кол-во стобцов: </label>
+            <input id="numberColumns" type="number" min="1" max="10" value="3">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Параметры границы таблицы</legend>
+        <div class="form-group">
+            <label for="tableBorderWidth">Толщина: </label>
+            <input id="tableBorderWidth" type="number" min="1" max="10" value="3">
+
+            <label for="tableBorderType">Тип: </label>
+            <select class="table-border-type" name="tableBorderType" id="tableBorderType">
+                <option value="solid">Сплошная</option>
+                <option value="dotted">Точечная</option>
+                <option value="dashed">Пунктирная</option>
+                <option value="double">Двойная</option>
+                <option value="groove">Объёмная</option>
+            </select>
+
+            <label for="tableBorderColor">Цвет: </label>
+            <input type="color" name="tableBorderColor" id="tableBorderColor" value="#0000ff">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Параметры ячеек</legend>
+        <div class="form-group">
+            <label for="tableDataPadding">Внутренний отступ: </label>
+            <span>5px</span>
+            <input id="tableDataPadding" type="range" min="5" max="30" step="5" value="10">
+            <span>30px <em>(шаг 5px)</em></span>
+        </div>
+        <div class="form-group">
+            <label for="tableDataColor">Цвет фона ячеек: </label>
+            <input id="tableDataColor" type="color" value="#ffffff">
+    
+            <label for="tableFontSize">Размер шрифта: </label>
+            <select class="table-font-size" id="tableFontSize" name="tableFontSize">
+                <option value="font-small">мелкий</option>
+                <option value="font-medium">средний</option>
+                <option value="font-normal">обычный</option>
+                <option value="font-big">большой</option>
+                <option value="font-extra-big">крупный</option>
+            </select>
+    
+            <label for="tableDataFontColor">Цвет текста: </label>
+            <input id="tableDataFontColor" type="color" value="#000000">
+        </div>
+    </fieldset>
+
+</form>
+
+<table class="table">
+    <caption>Сгенерированная таблица</caption>
+    <thead class="table-header">
+        <tr class="table-row">
+            <th class="table-data">Lorem ipsum dolor sit amet.</th>
+            <th class="table-data">Lorem ipsum dolor sit amet.</th>
+            <th class="table-data">Lorem ipsum dolor sit amet.</th>
+        </tr>
+    </thead>
+    <tbody class="table-body">
+        <tr class="table-row">
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr class="table-row">
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr class="table-row">
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+        </tr>
+    </tbody>
+    <tfoot class="table-footer">
+        <tr class="table-row">
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+            <td class="table-data">Lorem ipsum dolor sit amet.</td>
+        </tr>
+    </tfoot>
+</table>
 
 
-bjlbjnl
 
 
 
