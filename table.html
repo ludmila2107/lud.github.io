@@ -74,7 +74,7 @@
                 <input id="tableFontColor" type="color" value="#000000">
             </div>
             <div class="form-group">
-                <label>Граница строк: </label>
+                <label>Рамка ячеек: </label>
                 <label for="tableDataWidth">толщина: </label>
                 <input id="tableDataWidth" type="number" min="1" max="5" value="1">
 
@@ -99,6 +99,14 @@
             </div>
         </fieldset>
     </form>
+    <div class="modal modal-hidden">
+        <p class="modal-title">Вы действительно хотите <br>создать таблицу?</p>
+        <div class="modal-buttons">
+            <button class="btn btn-yes">Да, подтверждаю</button>
+            <button class="btn btn-no">Нет</button>
+        </div>
+    </div>
+
 
     <!-- <table class="table">
         <caption class="table-name">Сгенерированная таблица</caption>
