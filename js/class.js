@@ -52,6 +52,18 @@ let coloredRect1 = new ColoredRectangle(width, height, color, "Привет!")
 document.body.prepend(coloredRect1.createDiv());
 
 class Circle {
+
+    static SMALL_SHADOW = 'small';
+    static NORMAL_SHADOW = 'normal';
+    static BIG_SHADOW = 'big';
+
+    #nameValue;
+    #radiusValue;
+    #bgColorValue;
+
+    #masShadows = [Circle.SMALL_SHADOW, Circle.NORMAL_SHADOW, Circle.BIG_SHADOW];
+    #shadow;
+
     constructor(name, radius, bgColor) {
         this.name = name;
         this.radius = radius;
@@ -63,6 +75,45 @@ class Circle {
         }
     }
 
+    get name() {
+        return this.#nameValue.toUpperCase();
+    }
+
+    set name(newName) {
+        if (newName !== '') {
+            this.#nameValue = newName[0].toUpperCase() + (newName.substring(1, newName.length)).toLowerCase();
+        }
+        else {
+            alert('Имя не может быть пустым!');
+        }
+    }
+
+    get radius() {
+        return this.#radiusValue;
+    }
+
+    set radius(rad) {
+        if (rad > 0 && rad <= 300) {
+            this.#radiusValue = parseInt(rad);
+        }
+        else {
+            alert('Радиус окружности слишком маленький/большой!');
+        }
+    }
+
+    get bgColor() {
+        return this.#bgColorValue;
+    }
+
+    set bgColor(color) {
+        if (parseInt(color.substring(14, color.length - 1)) < 25) {
+            alert('Слишком тёмный цвет! Не хватает яркости!');
+        }
+        else {
+            this.#bgColorValue = color;
+        }
+    }
+
     calcArea() {
         return Math.round(Math.PI * this.radius ** 2);
     }
@@ -71,8 +122,12 @@ class Circle {
         return Math.round(Math.PI * this.getDiameter());
     }
 
-    changeName(newName) {
-        this.name = newName;
+    getShadow() {
+        return this.#shadow;
+    }
+
+    setShadow(index) {
+        this.#shadow = this.#masShadows[index];
     }
 
     createDivCircle() {
@@ -122,3 +177,18 @@ for (let i = countCircles - 1; i >= 0; i--) {
 
     document.body.prepend(circle.createDivCircle());
 }
+
+console.log(circle.name);
+circle.name = "оКРужнОсть";
+
+
+console.log(circle.bgColor);
+circle.bgColor = 'hsl(200, 100%, 30%)';
+console.log(circle.bgColor);
+
+// console.log(`Новое имя: ${circle.name}`);
+
+// circle.setShadow(2);
+
+// console.log(circle.getShadow());
+// console.log(Circle.SMALL_SHADOW);
