@@ -1,5 +1,6 @@
 .cards {
     display: flex;
+    flex-direction: column;
     margin: auto;
     padding: 20px;
     padding-top: 0;
@@ -7,6 +8,63 @@
     min-height: 50vh;
 
     background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+
+    .filters {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: lightgreen;
+        font-family: 'Roboto Slab', 'Georgia', serif;
+
+        input:focus,
+        input:active,
+        select:focus,
+        select:active,
+        button:focus,
+        button:active {
+            outline: 1px solid gold;
+        }
+
+        &-title {
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &__category-list {
+            margin-right: 20px;
+            padding: 5px 10px;
+            border: 1px solid rgb(137, 196, 252);
+        }
+
+        &__price-value {
+            padding: 5px 10px;
+            width: 100px;
+
+            border: 1px solid rgb(137, 196, 252);
+        }
+
+        &-button {
+            font-family: "Montserrat", "Verdana", sans-serif;
+            margin-left: 10px;
+            padding: 5px 10px;
+
+            background-color: rgb(248, 229, 120);
+            border: 1px solid rgb(201, 174, 20);
+
+            transition: all 0.25s;
+
+            &:hover {
+                background-color: rgb(255, 221, 0);
+                cursor: pointer;
+            }
+        }
+
+        &-error {
+            border-color: red;
+        }
+    }
 
     .container {
         display: flex;
@@ -20,6 +78,7 @@
 
 .card__item {
     box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +89,21 @@
     
     box-shadow: 2px 2px 15px rgb(164, 180, 105);
     background-image: linear-gradient(60deg, #bff7e4 0%, #faf1b3 100%);
+
+    &::before {
+            display: block;
+            position: absolute;
+            top: 35px;
+            right: 45px;
+            content: attr(data-category);
+
+            padding: 5px 7px;
+            font-size: 0.5rem;
+            font-family: 'Montserrat', 'Verdana', sans-serif;
+            text-transform: uppercase;
+            color: rgb(218, 218, 218);
+            background-color: rgba(0, 0, 0, 0.452);
+    }
 
     &-image {
         width: 90%;
@@ -66,5 +140,9 @@
     &__price-value {
         font-size: 1.25rem;
         color: darkblue;
+    }
+
+    &_hidden {
+        display: none;
     }
 }
