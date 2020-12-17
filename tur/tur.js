@@ -261,3 +261,75 @@ function filterCards() {
 
 
 
+$(function () {
+   
+    let moreSettings = $('#moreSettings');
+    let moreSettingsHidden = $('.more-settings__hidden');
+
+   
+
+    let modal = $('.modal');
+    let btnYes = $('.btn-yes');
+    let btnNo = $('.btn-no');
+
+    let btnCreate = $('.btn-create');
+    let btnRemove = $('.btn-remove');
+
+    let table, row, data;
+
+    function createTable() {
+        if (getTable()) {
+            manageError('p', 'error', 'Таблица может быть только одна!');
+        }
+        else {
+            modal.addClass('modal-hidden');
+            table = createElem('table', 'table');
+
+            
+
+    
+        }
+    }
+
+    
+    function removeTable() {
+        getTable() ? $('.table').remove() : manageError('p', 'error', 'Удалять нечего!');
+    }
+
+    function getTableData() {
+        return $('.table-data');
+    }
+
+    btnCreate.on('click', function () {
+        modal.removeClass('modal-hidden');
+
+        btnYes.on('click', () => { table = createTable(); });
+        btnNo.on('click', () => { modal.addClass('modal-hidden'); });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key == "Enter") {
+                table = createTable();
+            }
+            if (event.key == "Escape") {
+                modal.addClass('modal-hidden');
+            }
+        });
+    });
+
+    btnRemove.on('click', () => { removeTable(); });
+
+    moreSettings.on('change', () => { moreSettingsHidden.toggleClass('more-settings__hidden'); });
+
+    tableBorderWidth.on('input', () => { $('.table').css('border-width', tableBorderWidth.val() + 'px'); });
+    tableBorderType.on('input', () => { $('.table').css('border-style', tableBorderType.val()); });
+    tableBorderColor.on('input', () => { $('.table').css('border-color', tableBorderColor.val()); });
+
+    tableDataPadding.on('input', () => { getTableData().css('padding', tableDataPadding.val() + 'px'); });
+    tableDataColor.on('input', () => { getTableData().css('background-color', tableDataColor.val()); });
+    tableFontSize.on('change', () => { getTableData().attr('class', 'table-data ' + tableFontSize.val()); });
+    tableFontColor.on('input', () => { getTableData().css('color', tableFontColor.val()); });
+
+    tableDataWidth.on('input', () => { getTableData().css('border-width', tableDataWidth.val()); });
+    dataBorderType.on('change', () => { getTableData().css('border-style', dataBorderType.val()); });
+    dataBorderColor.on('input', () => { getTableData().css('border-color', dataBorderColor.val()); });
+});
