@@ -1,7 +1,8 @@
 html {
     font-family: "Ubuntu", "Tahoma", sans-serif;
     background-color: #ebedf0;
-    background-image: url("./img/grek1.jpg");
+    background-image: url("./img/grek2.jpg");
+    background-repeat: no-repeat center fixed;;
     box-sizing: border-box;
 }
 
@@ -36,13 +37,15 @@ nav a {
 
 .topmenu > li > a {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     height: 3px;
-    line-height: 5px;
-    padding: 10px 80px;
+    line-height: 20px;
+    margin:10px;
+    padding: 20px 50px;
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .down:after {
@@ -58,24 +61,28 @@ nav a {
     left: 0;
     visibility: hidden;
     opacity: 0;
+    text-align: center;
     z-index: 5;
     width: 150px;
     transition: .6s ease-in-out;
+   
 }
 
 .topmenu > li:hover .submenu {
     visibility: visible;
     opacity: 1;
+    
 
 }
 
 .submenu li a {
-    color: #ffffff;
+    color: #eaeff3;
     ;
     font-size: 18px;
     font-weight: bold;
+    text-decoration: none;
 
-    padding: 15px 80px;
+    padding: 5px 50px;
     font-family: 'Ubuntu', serif;
 }
 
@@ -87,13 +94,14 @@ nav a {
     padding-top: 0;
     width: 1200px;
     min-height: 50vh;
+    
 
     .filters {
         display: flex;
         align-items: center;
         margin-top: 20px;
         padding: 10px;
-        background-color: lightgreen;
+        background-color: rgb(83, 155, 248);
         font-family: 'Roboto Slab', 'Georgia', serif;
 
         input:focus,
@@ -102,7 +110,7 @@ nav a {
         select:active,
         button:focus,
         button:active {
-            outline: 1px solid gold;
+            outline: 1px solid rgb(136, 228, 245);
         }
 
         &-title {
@@ -120,6 +128,7 @@ nav a {
         &__price-value {
             padding: 5px 10px;
             width: 100px;
+            font-size: 1.25rem;
 
             border: 1px solid rgb(137, 196, 252);
         }
@@ -129,13 +138,13 @@ nav a {
             margin-left: 10px;
             padding: 5px 10px;
 
-            background-color: rgb(248, 229, 120);
-            border: 1px solid rgb(201, 174, 20);
+            background-color:  rgb(83, 155, 248);
+            border: 2px solid rgb(133, 186, 236);
 
             transition: all 0.25s;
 
             &:hover {
-                background-color: rgb(255, 221, 0);
+                background-color: rgb(132, 229, 241);
                 cursor: pointer;
             }
         }
@@ -165,6 +174,7 @@ nav a {
     width: 30%;
     margin-top: 20px;
     padding: 25px;
+     border-radius: 10px;
 
     box-shadow: 2px 2px 15px rgb(164, 180, 105);
     background-image: linear-gradient(60deg, #bff7e4 0%, #faf1b3 100%);
@@ -217,7 +227,7 @@ nav a {
     }
 
     &__price-value {
-        font-size: 1.25rem;
+        font-size: 14px;
         color: darkblue;
     }
 
@@ -225,3 +235,36 @@ nav a {
         display: none;
     }
 }
+h2{
+text-align: center;
+color: #bff7e4;
+
+}
+
+.form-filt{
+    float: left;
+}
+
+
+
+.companies-on{
+    display: inline-block;
+     border-radius: 30px;
+     text-align: center;
+     margin: 100px;
+     font-size: 18px;
+     color: #bff7e4;
+
+}
+.btn{
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
