@@ -38,7 +38,7 @@
             </li>
         </ul>
     </nav>
-<div class="form-filt" style="float: right; ">
+<div class="form-filt" style="float: right; color:#ffffff ">
     <h3>Статус заявки</h3>
     <input type="search">
     <input type="submit" value="Показать">
@@ -61,9 +61,9 @@
             
              
             <div class="filters__price">
-                <label class="filters-title" for="">Цена:</label>
-                <input class="filters__price-value" id="minPrice" type="text" data-min="500" maxlength="6" placeholder="от 500">
-                <input class="filters__price-value" id="maxPrice" type="text" data-max="100000" maxlength="6" placeholder="до 100 000">
+            <label class="filters-title" for="">Цена:</label>
+            <input class="filters__price-value" id="minPrice" type="text" data-min="500" maxlength="6" placeholder="от 500">
+            <input class="filters__price-value" id="maxPrice" type="text" data-max="100000" maxlength="6" placeholder="до 100 000">
             </div>
             <button class="filters-button" type="button">Показать</button>
         </div>
@@ -78,7 +78,7 @@
     <div class="companies-on">
    <img src="img/rixos.jpg" alt="Rixos" style="width:300px;height:200px; border-radius: 10px" >
    <p>Rixos <sup>*****</sup> от 10000 €</p> 
-   <button class="btn" onclick="openForm('modal modal-hidden') type="button">Подробнее</button></div>
+   <button class="btn" type="button">Подробнее</button></div>
 <div class="companies-on">
     <img src="img/anam.jpg" alt="Rixos" style="width:300px;height:200px;border-radius: 10px">
     <p>Anam <sup>****</sup> от 5000 €</p>
@@ -126,32 +126,6 @@
 </div>
 
 
-<section class="modal modal-hidden">
-    <form class="login" action="#" method="post">
-        <fieldset>
-            <div>
-                <label for="txt-name">Имя: </label>
-                <input id="txt-name" type="text" name="txt-login" placeholder="Иван Иванов">
-            </div>
-
-            <div>
-                <label for="txt-login">Email: </label>
-                <input id="txt-login" type="text" name="txt-login" placeholder="ivanov@mail.ru">
-            </div>
-
-            <div>
-                <label for="txt-pswd">Пароль: </label>
-                <input id="txt-pswd" type="tel" name="txt-pswd">
-            </div>
-            <div>
-                <input id="chk-agree" type="checkbox">
-                <label for="chk-agree"> Я согласен!</label>
-            </div>
-
-            <button type="submit">Отправить</button>
-        </fieldset>
-    </form>
-</section>
 
 
 
